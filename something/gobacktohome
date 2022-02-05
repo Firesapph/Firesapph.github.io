@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title> go back to home page</title>
+       <style>
+           body {
+               font-family: monospace;
+               text-align: center;
+               font-size: 2em;
+               background-color: rgb(105, 105, 105);
+           }
+           a {
+                color: rgb(44, 44, 44);
+           }
+           
+       </style>
+    </head>
+    <body>
+        <h1> Hello, thanks for logging in! </h1>
+        <p> Go back to </p> <a href="https://firesapph.github.io">home page</a>
+    </body>
+</html>
