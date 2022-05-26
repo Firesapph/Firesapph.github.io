@@ -8,6 +8,7 @@
                 background-color: rgb(203, 223, 240);
                 box-sizing: border-box;
                 text-align: center;
+                
             }
             a {
                 text-decoration: none;
@@ -31,6 +32,13 @@
                 float: right;
                 background-color: rgb(17, 47, 77);
             }
+            .logo {
+                float: left;
+                background-color: rgb(17, 47, 77);
+                width: 4rem;
+                
+            }
+            
             .star {
                 width: 3rem;
                 padding: 6px;
@@ -76,30 +84,37 @@
            }
            .cake_image {
                width: 100%;
+               max-height: 200px;
            }
            h3 {
                display: inline-flex;
            }
-           
+           select {
+               font-size: 1rem;
+           }
            
         </style>
     </head>
     <body>
         <div class="balk">
-            <h1 class="contentbalk"> Mmmmm cakes </h1>
+            <img class="contentbalk logo" src="https://i.ibb.co/vzhLmrt/g2732.png">
+            <h1 class="contentbalk"> Mmm cakes </h1>
             <img class="shopping_stuff contentbalk basket" src="https://i.ibb.co/Trh2dsP/no.png" alt="shopping basket icon" />
             <img class="shopping_stuff contentbalk star" src="https://i.ibb.co/tzDqN6g/path2618.png" alt="star icon" />
         </div>
         <a href="https://firesapph.github.io/burp/"><h1 class="contentbalk">Go back to Home.</h1> </a>
         <br>
+        <h2> Which colour?</h2>
         <form action="reveal.html" method="post">
-            <label for="name">What's your name?</label>
-            <input id="name" name="name" type="text" placeholder="Bobby" minlength="3" maxlength="20"> 
-            <input type="submit" value="ok">
+            <select name="colour-option"> 
+                <option value="blue">Blue</option>
+                <option value="pink">Pink</option>
+                <option value="yellow">Yellow</option>
+              </select>
         </form>
         <div class="cake">
-            <img class="cake_image" src="https://www.leukerecepten.nl/wp-content/uploads/2020/09/kinder-bueno-taart_b.jpg" alt="delicious chocolate cake"/>
-            <h3 class="cake"> Chocolate Cake</h3> <h3 class="cake"> €555 </h3>
+            <img class="cake_image" src="https://images-gmi-pmc.edge-generalmills.com/a1a576ad-8da0-401c-b10a-683282430143.jpg" alt="gender reveal boy cake"/>
+            <h3 class="cake"> Gender reveal </h3> <h3 class="cake"> €555 </h3>
             <img class="star2" src="https://i.ibb.co/tzDqN6g/path2618.png" alt="star icon" />
         </div> 
     </body>
