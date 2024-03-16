@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Yahtzee</title>
+    <style>
+        #diceContainer {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+.die {
+    font-size: 24px;
+    width: 40px;
+    height: 40px;
+    border: 1px solid black;
+    margin: 0 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#score {
+    font-size: 18px;
+}
+.selected {
+    background-color: lightblue;
+}
+
+    </style>
+</head>
+<body>
+    <h1>Yahtzee</h1>
+    <div id="diceContainer"></div>
+    <button id="rollButton">Roll Dice</button>
+    <h2>Score:</h2>
+    <div id="score"></div>
+
+    <script>
+        // Define an array to hold dice values
+// Define an array to hold dice values
+var dice = [];
+
+// Function to roll a single die
+function rollDie() {
+    return Math.floor(Math.random() * 6) + 1;
+}
+
+// Function to roll all dice
+function rollDice() {
+    var diceContainer = document.getElementById("diceContainer");
+    diceContainer.innerHTML = "";
+    for (var i = 0; i < 5; i++) {
+        if (!dice[i] || dice[i].selected) { // Roll only if the die is not selected or if it's selected for reroll
+            var value = rollDie();
+            dice[i] = { value: value, selected: false };
+        }
+        var dieDiv = document.createElement("div");
+        dieDiv.classList.add("die");
+        if (dice[i].selected) {
+            dieDiv.classList.add("selected");
+        }
+        dieDiv.innerText = dice[i].value;
+        diceContainer.appendChild(dieDiv);
+    }
+}
+
+// Function to calculate and display the total score
+function calculateScore() {
+    var total = dice.reduce(function(acc, die) {
+        return acc + die.value;
+    }, 0);
+    document.getElementById("score").innerText = "Total Score: " + total;
+}
+
+// Function to toggle selection of a die
+function toggleSelection(index) {
+    dice[index].selected = !dice[index].selected;
+    var dieDiv = document.getElementById("diceContainer").children[index];
+    dieDiv.classList.toggle("selected");
+}
+
+// Event listener for die click
+document.getElementById("diceContainer").addEventListener("click", function(event) {
+    if (event.target.classList.contains("die")) {
+        var index = Array.prototype.indexOf.call(event.currentTarget.children, event.target);
+        toggleSelection(index);
+    }
+});
+
+// Event listener for the roll button
+document.getElementById("rollButton").addEventListener("click", function() {
+    rollDice();
+    calculateScore();
+});
+
+// Initial roll when the page loads
+rollDice();
+calculateScore();
+    </script>
+</body>
+</html>
