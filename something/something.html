@@ -49,6 +49,12 @@
             .nobutton {
                 background-color: white;
             }
+            .hide {
+                display: none;
+            }
+            .myDiv:hover + .hide {
+                display: block;
+            }
             #buttons {
                 position: relative;
                 top: 10px;
@@ -76,7 +82,10 @@
              <button><a class="pages" href="https://firesapph.github.io/something/something.html">Something</a></button></h1>   
         
         <div id="marg">
+        <div class="myDiv">
         <h3>Contents</h3>
+        </div>
+        <div class="hide">
         <ul>
              <li><a href="#food">Food!!</a></li>
             <li><a href="#year2023">New year</a></li>
@@ -86,6 +95,7 @@
             <li><a href="#introduction">Introduction </a></li>
             <li><a href="#yup">First post!</a></li>
         </ul>
+        </div>
                 <h2 id="food"> Food!!</h2>
         <h5 class="posts"> Post from 2023</h5>
         <p> Hi hi!! It is now April, and my birthday is in a couple of weeks. Sweet sixteen :) I just wanted to share with everyone (no-one reads this hehe) that I just finished a couple of weeks full of tests and was so proud of myself that I just ate an entire box full of chocolates. Okay, fine, that was just an excuse to eat chocolate, but still. :)</p>
