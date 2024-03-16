@@ -103,6 +103,13 @@
         <h2 id="dice"> Dice </h2>
         <h5 class="posts"> Post from 2024 </h5>
         <p> Hi, it's been a while since I have put anything on this site, so hereby I made a dice and if you click it, it will 'roll' a number between 1 and six. So I'd say give it a try! </p>
+        <button id="rollButton"> Roll dice! </button>
+        <p id="result"></p>
+        <script>
+            document.getElementById("rollButton").addEventListener("click", function() {
+            var randomNumber = Math.floor(Math.random() * 6) + 1; // Generates random number between 1 and 6
+            document.getElementById("result").innerText = "You rolled: " + randomNumber;
+        </script>
         <h2 id="food"> Food!!</h2>
         <h5 class="posts"> Post from 2023</h5>
         <p> Hi hi!! It is now April, and my birthday is in a couple of weeks. Sweet sixteen :) I just wanted to share with everyone (no-one reads this hehe) that I just finished a couple of weeks full of tests and was so proud of myself that I just ate an entire box full of chocolates. Okay, fine, that was just an excuse to eat chocolate, but still. :)</p>
